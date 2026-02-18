@@ -3,199 +3,106 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Code2, 
-  Megaphone, 
-  Users, 
-  ArrowRight, 
-  CheckCircle2, 
-  Instagram, 
-  Linkedin,
-  Rocket,
-  Zap,
-  Layout,
-  Cpu,
-  Globe,
-  Layers,
-  Sparkles,
-  Bot,
-  Video,
-  ShieldCheck,
-  TrendingUp
+  Code2, Megaphone, Users, ArrowRight, CheckCircle2, 
+  Instagram, Linkedin, Rocket, Zap, Cpu, Globe, 
+  Layers, Bot, Video, ShieldCheck, TrendingUp 
 } from 'lucide-react';
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-[#030303] text-zinc-100 selection:bg-blue-500/30 overflow-x-hidden font-sans">
+    <div className="min-h-screen bg-[#030303] text-zinc-100 selection:bg-blue-500/30 overflow-x-hidden">
       
-      {/* --- HEADER --- */}
+      {/* --- NAV --- */}
       <nav className="flex justify-between items-center px-6 md:px-12 py-6 border-b border-white/5 backdrop-blur-2xl sticky top-0 z-[100]">
-        <div className="text-2xl font-black tracking-tighter bg-gradient-to-r from-blue-400 to-violet-500 bg-clip-text text-transparent">
-          KangJOE<span className="text-white">.</span>
+        <div className="text-2xl font-black tracking-tighter bg-gradient-to-r from-blue-400 to-violet-500 bg-clip-text text-transparent italic">
+          KangJOE.
         </div>
-        <div className="hidden md:flex gap-10 text-sm font-medium text-zinc-400">
+        <div className="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-zinc-500">
           <a href="#services" className="hover:text-white transition-colors">Layanan</a>
-          <a href="#innovation" className="hover:text-white transition-colors">Inovasi SMK</a>
+          <a href="#trends" className="hover:text-white transition-colors text-blue-400">Tren SMK 2026</a>
           <a href="#smk" className="hover:text-white transition-colors">Program</a>
         </div>
-        <button className="bg-white text-black hover:bg-zinc-200 px-6 py-2.5 rounded-full text-sm font-bold transition-all active:scale-95 shadow-lg shadow-white/5">
-          Mulai Proyek
+        <button className="bg-white text-black px-6 py-2 rounded-full text-xs font-black hover:bg-blue-500 hover:text-white transition-all">
+          KONTAK
         </button>
       </nav>
 
-      {/* --- HERO SECTION --- */}
-      <section className="relative px-6 pt-24 pb-32 flex flex-col items-center text-center">
-        <div className="absolute top-0 -z-10 h-[600px] w-full bg-blue-600/10 blur-[150px] rounded-full opacity-50" />
-        
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-5xl"
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/20 bg-blue-500/5 text-blue-400 text-xs font-semibold mb-8">
-            <Zap size={14} className="fill-current" /> Leading Digital Innovation in Majalengka
-          </div>
-          
-          <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-8 leading-[1.05] text-white italic">
-            Menjembatani <span className="text-blue-500">Inovasi</span> <br />
-            ke Hati <span className="bg-gradient-to-r from-violet-400 to-fuchsia-500 bg-clip-text text-transparent">Konsumen</span>
+      {/* --- HERO --- */}
+      <section className="relative px-6 pt-24 pb-20 text-center">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 -z-10 h-[500px] w-full max-w-4xl bg-blue-600/10 blur-[120px]" />
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+          <h1 className="text-5xl md:text-8xl font-black tracking-tighter mb-6 leading-none">
+            INOVASI <span className="text-blue-500">DIGITAL</span> <br />
+            UNTUK <span className="text-zinc-500">MAJALENGKA</span>
           </h1>
-          
-          <p className="text-zinc-400 max-w-2xl mx-auto text-lg md:text-xl mb-12 leading-relaxed font-light">
-            Sinergi teknologi <span className="text-white font-medium">Software House</span> dan strategi <span className="text-white font-medium">Digital Marketing</span> untuk akselerasi bisnis masa depan.
+          <p className="text-zinc-500 max-w-xl mx-auto text-lg italic mb-10">
+            "Menjembatani Inovasi Penjual ke Hati Konsumen melalui Teknologi dan Strategi."
           </p>
-
-          <div className="flex flex-col sm:flex-row gap-5 justify-center">
-            <button className="group relative flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-500 text-white px-10 py-5 rounded-2xl font-bold transition-all shadow-2xl shadow-blue-500/20">
-              Konsultasi Gratis <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </button>
-          </div>
         </motion.div>
       </section>
 
-      {/* --- BENTO GRID SERVICES --- */}
-      <section id="services" className="px-6 py-12 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[200px]">
-          
-          {/* Card 1: Software House */}
-          <motion.div whileHover={{ y: -5 }} className="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-[2.5rem] border border-white/10 bg-zinc-900/40 p-10 flex flex-col justify-end">
-            <div className="absolute top-8 right-8 p-4 bg-blue-500/10 rounded-2xl text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-500">
-              <Code2 size={40} />
-            </div>
-            <div className="relative z-10">
-              <h3 className="text-3xl font-bold mb-4 italic text-white">Software House</h3>
-              <p className="text-zinc-400 text-lg">Laravel, Next.js, & Otomasi Google Apps Script.</p>
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-blue-500/10 to-transparent" />
-          </motion.div>
-
-          {/* Card 2: Marketing */}
-          <motion.div whileHover={{ y: -5 }} className="md:row-span-2 relative group overflow-hidden rounded-[2.5rem] border border-white/10 bg-zinc-900/40 p-8 flex flex-col justify-between">
-            <div className="p-4 bg-violet-500/10 rounded-2xl text-violet-400 w-fit group-hover:bg-violet-500 group-hover:text-white transition-all duration-500">
-              <Megaphone size={32} />
-            </div>
-            <div>
-              <h3 className="text-2xl font-bold mb-4 italic text-white">Digital Marketing</h3>
-              <p className="text-zinc-400 text-sm">Ads Driven & AI Content Strategy.</p>
-            </div>
-          </motion.div>
-
-          {/* Card 3: Tech Stack */}
-          <motion.div className="relative group overflow-hidden rounded-[2.5rem] border border-white/10 bg-zinc-900/40 p-6 flex flex-col justify-between">
-            <div className="text-blue-400"><Layers size={24}/></div>
-            <div>
-              <h4 className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-2">Main Tech</h4>
-              <div className="flex flex-wrap gap-1 text-[9px] font-mono text-blue-300">
-                <span className="px-1.5 py-0.5 bg-blue-500/10 rounded">Next.js</span>
-                <span className="px-1.5 py-0.5 bg-blue-500/10 rounded">Laravel</span>
-                <span className="px-1.5 py-0.5 bg-blue-500/10 rounded">AppSheet</span>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Card 4: Internship */}
-          <motion.div className="relative group overflow-hidden rounded-[2.5rem] border border-blue-500/30 bg-blue-600/10 p-6 flex flex-col justify-center text-center">
-            <div className="text-blue-400 font-black text-3xl mb-1 italic">3 | 5 | 6</div>
-            <p className="text-[10px] text-zinc-400 uppercase tracking-widest font-bold">Durasi Magang (Bulan)</p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* --- INNOVATION & TRENDS SECTION --- */}
-      <section id="innovation" className="px-6 py-24 max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-          <div className="max-w-2xl">
-            <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-4 italic">5 Tren Inovatif <br/><span className="text-blue-500">Talenta SMK 2026</span></h2>
-            <p className="text-zinc-500 text-lg">Eksklusif ditawarkan KangJOE untuk mempersiapkan siswa menghadapi industri digital masa depan.</p>
-          </div>
-          <div className="px-6 py-3 bg-white/5 rounded-full border border-white/10 text-zinc-400 text-sm font-medium">
-            Future-Ready Curriculum
-          </div>
+      {/* --- 5 TREN INOVATIF SMK (SECTION BARU) --- */}
+      <section id="trends" className="px-6 py-20 max-w-7xl mx-auto">
+        <div className="mb-12">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tighter italic mb-4 uppercase">
+            5 Tren Inovatif <span className="text-blue-500">SMK 2026</span>
+          </h2>
+          <p className="text-zinc-500 font-medium">Kurikulum masa depan yang hanya ada di KangJOE Digital Hub.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
           {[
-            { title: "AI-Driven Marketing", desc: "Prompt Engineering & Content AI.", icon: <Bot size={28}/>, color: "from-blue-500/20" },
-            { title: "Live Commerce Tech", desc: "Sistem Live Stream & Konversi.", icon: <TrendingUp size={28}/>, color: "from-violet-500/20" },
-            { title: "Low-Code Specialist", desc: "Automasi AppSheet & Apps Script.", icon: <Zap size={28}/>, color: "from-fuchsia-500/20" },
-            { title: "Short-Video Motion", desc: "Viral Content Production.", icon: <Video size={28}/>, color: "from-orange-500/20" },
-            { title: "Cloud Automation", desc: "Serverless Deployment & Security.", icon: <ShieldCheck size={28}/>, color: "from-emerald-500/20" }
-          ].map((item, i) => (
-            <motion.div 
-              key={i} 
-              whileHover={{ scale: 1.05 }}
-              className={`p-8 rounded-[2rem] border border-white/5 bg-gradient-to-b ${item.color} to-zinc-900/40 flex flex-col gap-6`}
-            >
-              <div className="p-3 bg-white/5 w-fit rounded-xl text-white">{item.icon}</div>
-              <div>
-                <h4 className="font-bold text-white mb-2 leading-tight">{item.title}</h4>
-                <p className="text-xs text-zinc-500 leading-relaxed">{item.desc}</p>
-              </div>
-            </motion.div>
+            { t: "AI Marketing", d: "Prompt Engineering & Content AI.", i: <Bot/>, c: "border-blue-500/30" },
+            { t: "Live Commerce", d: "Streaming & Tech Sales.", i: <TrendingUp/>, c: "border-violet-500/30" },
+            { t: "Low-Code Dev", d: "AppSheet & Automasi Bisnis.", i: <Zap/>, c: "border-orange-500/30" },
+            { t: "Motion Video", d: "Produksi Video Viral TikTok.", i: <Video/>, c: "border-pink-500/30" },
+            { t: "Cloud Tech", d: "Security & Deployment.", i: <ShieldCheck/>, c: "border-emerald-500/30" }
+          ].map((item, idx) => (
+            <div key={idx} className={`p-8 rounded-[2rem] border ${item.c} bg-zinc-900/50 hover:bg-zinc-800 transition-all group`}>
+              <div className="mb-6 text-white group-hover:scale-110 transition-transform">{item.i}</div>
+              <h4 className="font-black text-sm mb-2 uppercase tracking-tight">{item.t}</h4>
+              <p className="text-xs text-zinc-500 leading-relaxed">{item.d}</p>
+            </div>
           ))}
         </div>
       </section>
 
-      {/* --- PROGRAM SMK --- */}
-      <section id="smk" className="px-6 py-24 bg-white/[0.01] border-y border-white/5 relative">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2 className="text-4xl md:text-5xl font-black mb-6 italic text-white leading-tight">Pusat Inkubasi <br/><span className="text-blue-500">Talenta Digital.</span></h2>
-            <p className="text-zinc-400 text-lg mb-8 font-light italic leading-relaxed">"Sinergi kurikulum SMK Majalengka dengan realitas industri teknologi dunia."</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {['Praktek Laravel', 'Ads Strategist', 'DKV Kreatif', 'Cloud Network'].map((item, i) => (
-                <div key={i} className="flex items-center gap-3 text-zinc-300 font-medium">
-                  <CheckCircle2 size={18} className="text-blue-500" /> {item}
-                </div>
-              ))}
+      {/* --- SERVICES (BENTO LIGHT) --- */}
+      <section id="services" className="px-6 py-20 max-w-7xl mx-auto border-t border-white/5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 h-auto md:h-[400px]">
+          <div className="md:col-span-2 bg-blue-600/10 border border-blue-500/20 rounded-[2.5rem] p-10 flex flex-col justify-end relative overflow-hidden">
+            <Code2 className="absolute top-10 right-10 text-blue-500/20" size={120} />
+            <h3 className="text-4xl font-black italic mb-2">SOFTWARE HOUSE</h3>
+            <p className="text-zinc-400">Laravel, Next.js & Google Apps Script Specialist.</p>
+          </div>
+          <div className="bg-zinc-900/80 border border-white/10 rounded-[2.5rem] p-10 flex flex-col justify-between">
+            <Megaphone className="text-violet-500" size={40} />
+            <div>
+              <h3 className="text-2xl font-black italic mb-2 leading-none">DIGITAL MARKETING</h3>
+              <p className="text-zinc-500 text-sm italic">Data-Driven Strategy.</p>
             </div>
           </div>
-          <div className="relative group p-10 rounded-[3rem] border border-white/5 bg-zinc-900/20 backdrop-blur-md text-center">
-             <Cpu size={48} className="mx-auto mb-6 text-blue-500 animate-pulse" />
-             <h3 className="text-2xl font-black mb-6 uppercase tracking-widest">Kolaborasi Institusi</h3>
-             <button className="w-full bg-white text-black py-4 rounded-2xl font-black hover:bg-blue-500 hover:text-white transition-all shadow-xl">
-               UNDUH PROPOSAL MOU
-             </button>
+        </div>
+      </section>
+
+      {/* --- PROGRAM SMK --- */}
+      <section id="smk" className="px-6 py-20 bg-blue-600 border-y border-white/10 text-white">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center text-center md:text-left">
+          <h2 className="text-4xl md:text-7xl font-black tracking-tighter italic uppercase leading-none">
+            Pusat Inkubasi <br/>Talenta Digital.
+          </h2>
+          <div className="bg-black/20 p-8 rounded-[2rem] backdrop-blur-md">
+            <p className="font-bold text-xl mb-6 italic">Gabung Program Magang 3, 5, atau 6 Bulan.</p>
+            <button className="w-full bg-white text-blue-600 py-4 rounded-xl font-black hover:scale-105 transition-all uppercase tracking-widest">
+              HUBUNGI KAMI
+            </button>
           </div>
         </div>
       </section>
 
       {/* --- FOOTER --- */}
-      <footer className="px-6 py-20 border-t border-white/5">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 text-center md:text-left">
-          <div className="max-w-sm mx-auto md:mx-0">
-            <div className="text-3xl font-black tracking-tighter mb-6 italic text-white uppercase">KangJOE.</div>
-            <p className="text-zinc-500 text-sm italic">"Menjembatani Inovasi Penjual ke Hati Konsumen melalui Teknologi dan Strategi."</p>
-          </div>
-          <div className="flex gap-4 mx-auto md:mx-0">
-             <a href="#" className="p-3 bg-white/5 rounded-xl hover:bg-blue-600 transition-colors"><Instagram size={20}/></a>
-             <a href="#" className="p-3 bg-white/5 rounded-xl hover:bg-blue-600 transition-colors"><Linkedin size={20}/></a>
-             <a href="#" className="p-3 bg-white/5 rounded-xl hover:bg-blue-600 transition-colors"><Globe size={20}/></a>
-          </div>
-        </div>
-        <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 text-center text-zinc-600 text-[10px] tracking-[0.2em] uppercase">
-          © 2026 KangJOE Hub • Majalengka Innovation Center
-        </div>
+      <footer className="px-6 py-12 text-center text-zinc-600 text-[10px] tracking-[0.3em] uppercase">
+        © 2026 KANGJOE DIGITAL HUB • MAJALENGKA
       </footer>
     </div>
   );
