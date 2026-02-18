@@ -14,7 +14,9 @@ import {
   Zap,
   Layout,
   Cpu,
-  Globe
+  Globe,
+  Database,
+  Layers
 } from 'lucide-react';
 
 export default function LandingPage() {
@@ -46,7 +48,7 @@ export default function LandingPage() {
           transition={{ duration: 0.8 }}
           className="max-w-5xl"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/20 bg-blue-500/5 text-blue-400 text-xs font-semibold mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/20 bg-blue-500/5 text-blue-400 text-xs font-semibold mb-8 animate-pulse">
             <Zap size={14} className="fill-current" /> Digital Solution & Creative Marketing Hub
           </div>
           
@@ -70,14 +72,14 @@ export default function LandingPage() {
         </motion.div>
       </section>
 
-      {/* --- BENTO GRID SERVICES --- */}
+      {/* --- BENTO GRID SERVICES & UPDATES --- */}
       <section id="services" className="px-6 py-24 max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black mb-4">Layanan Unggulan</h2>
-          <p className="text-zinc-500 italic">Ekselerasi digital tanpa batas.</p>
+          <h2 className="text-4xl md:text-6xl font-black mb-4 tracking-tighter">Layanan & Inovasi</h2>
+          <p className="text-zinc-500 italic">Solusi teknologi masa depan, hari ini.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[240px]">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[200px]">
           
           {/* Card 1: Software House (Large) */}
           <motion.div 
@@ -88,53 +90,69 @@ export default function LandingPage() {
               <Code2 size={40} />
             </div>
             <div className="relative z-10">
-              <h3 className="text-3xl font-bold mb-4">Software House</h3>
-              <p className="text-zinc-400 text-lg max-w-md">
-                Pengembangan ekosistem digital kustom: Laravel, Next.js, hingga otomasi Google Apps Script yang presisi.
+              <h3 className="text-3xl font-bold mb-4 italic">Software House</h3>
+              <p className="text-zinc-400 text-lg leading-relaxed">
+                Pengembangan ekosistem digital kustom: <span className="text-white">Laravel, Next.js,</span> hingga otomasi <span className="text-white font-medium">Google Apps Script</span> yang presisi.
               </p>
             </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-blue-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-t from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </motion.div>
 
           {/* Card 2: Marketing (Tall) */}
           <motion.div 
             whileHover={{ y: -5 }}
-            className="md:row-span-2 relative group overflow-hidden rounded-[2.5rem] border border-white/10 bg-zinc-900/40 p-10 flex flex-col justify-between"
+            className="md:row-span-2 relative group overflow-hidden rounded-[2.5rem] border border-white/10 bg-zinc-900/40 p-8 flex flex-col justify-between"
           >
             <div className="p-4 bg-violet-500/10 rounded-2xl text-violet-400 w-fit group-hover:bg-violet-500 group-hover:text-white transition-all duration-500">
               <Megaphone size={32} />
             </div>
             <div>
-              <h3 className="text-2xl font-bold mb-4">Digital Marketing</h3>
-              <p className="text-zinc-400">
-                Strategi periklanan data-driven untuk meningkatkan konversi secara eksponensial.
+              <h3 className="text-2xl font-bold mb-4 italic">Digital Marketing</h3>
+              <p className="text-zinc-400 text-sm">
+                Strategi periklanan data-driven dan <span className="text-white font-medium italic">AI Content Creation</span> untuk konversi pasar yang lebih masif.
               </p>
             </div>
             <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
           </motion.div>
 
-          {/* Card 3: UI/UX (Small) */}
+          {/* Card 3: Tech Stack (Small Square) */}
           <motion.div 
-            whileHover={{ y: -5 }}
-            className="relative group overflow-hidden rounded-[2.5rem] border border-white/10 bg-zinc-900/40 p-8 flex items-center gap-6"
+            whileHover={{ scale: 1.02 }}
+            className="relative group overflow-hidden rounded-[2.5rem] border border-white/10 bg-zinc-900/40 p-6 flex flex-col justify-between"
           >
-            <div className="text-fuchsia-400"><Layout size={32} /></div>
-            <h3 className="text-xl font-bold italic text-zinc-200">Modern UI/UX</h3>
-          </motion.div>
-
-          {/* Card 4: SMK (Wide) */}
-          <motion.div 
-            whileHover={{ y: -5 }}
-            className="md:col-span-2 relative group overflow-hidden rounded-[2.5rem] border border-white/10 bg-blue-600/10 p-10 flex flex-col justify-center"
-          >
-            <div className="flex items-center gap-6">
-              <div className="p-4 bg-blue-500/20 rounded-2xl text-blue-400"><Users size={32} /></div>
-              <div>
-                <h3 className="text-2xl font-bold italic">Tech Incubator</h3>
-                <p className="text-zinc-400">Pusat praktek industri talenta SMK Majalengka.</p>
+            <div className="text-blue-400"><Layers size={24}/></div>
+            <div>
+              <h4 className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest mb-2">Tech Stack</h4>
+              <div className="flex flex-wrap gap-1 text-[9px] font-mono text-blue-300">
+                <span className="px-1.5 py-0.5 bg-blue-500/10 rounded">Next.js</span>
+                <span className="px-1.5 py-0.5 bg-blue-500/10 rounded">Laravel</span>
+                <span className="px-1.5 py-0.5 bg-blue-500/10 rounded">Vercel</span>
               </div>
             </div>
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-transparent" />
+          </motion.div>
+
+          {/* Card 4: Internship Duration (Small Square) */}
+          <motion.div 
+            whileHover={{ scale: 1.02 }}
+            className="relative group overflow-hidden rounded-[2.5rem] border border-blue-500/30 bg-blue-600/10 p-6 flex flex-col justify-center text-center"
+          >
+            <div className="text-blue-400 font-black text-3xl mb-1">3 | 5 | 6</div>
+            <p className="text-[10px] text-zinc-400 uppercase tracking-widest font-bold leading-tight">Bulan Durasi Magang</p>
+          </motion.div>
+
+          {/* Card 5: Innovation Lab (Wide Card) */}
+          <motion.div 
+            whileHover={{ y: -5 }}
+            className="md:col-span-4 relative group overflow-hidden rounded-[2.5rem] border border-white/10 bg-zinc-900/40 p-8 flex items-center justify-between"
+          >
+            <div className="flex items-center gap-6">
+              <div className="p-4 bg-white/5 rounded-2xl text-zinc-400"><Rocket size={24} /></div>
+              <div>
+                <h3 className="text-xl font-bold italic">Innovation Lab</h3>
+                <p className="text-zinc-500 text-sm">Automasi Sertifikat QR, LMS Pro-Edu, & AI Content Hub terintegrasi.</p>
+              </div>
+            </div>
+            <ArrowRight className="text-zinc-700 group-hover:text-blue-500 transition-colors hidden md:block" />
           </motion.div>
 
         </div>
@@ -148,8 +166,8 @@ export default function LandingPage() {
             <h2 className="text-4xl md:text-6xl font-black mb-6 leading-tight text-white italic">
               Pusat Inkubasi <br/><span className="text-blue-500">Talenta Digital.</span>
             </h2>
-            <p className="text-zinc-400 text-lg mb-8 font-light">
-              Membangun jembatan antara kurikulum SMK dengan realitas industri teknologi dunia. Di bawah Yayasan Citra Telematika, kami mencetak jagoan masa depan.
+            <p className="text-zinc-400 text-lg mb-8 font-light italic">
+              "Menjembatani kurikulum SMK dengan realitas industri teknologi dunia. Di bawah Yayasan Citra Telematika, kami mencetak jagoan masa depan."
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {['Praktek Laravel', 'Ads Strategist', 'DKV Kreatif', 'Cloud Network'].map((item, i) => (
@@ -165,7 +183,7 @@ export default function LandingPage() {
                    <Cpu size={48} />
                 </div>
                 <h3 className="text-2xl font-extrabold mb-4 uppercase tracking-widest">Kolaborasi SMK</h3>
-                <button className="bg-white text-black px-8 py-4 rounded-2xl font-black hover:scale-105 transition-all">
+                <button className="bg-white text-black px-8 py-4 rounded-2xl font-black hover:scale-105 transition-all shadow-xl">
                   UNDUH PROPOSAL MOU
                 </button>
              </div>
@@ -179,7 +197,7 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
           <div className="max-w-sm">
             <div className="text-3xl font-black tracking-tighter mb-6 italic text-white">KangJOE.</div>
-            <p className="text-zinc-500 leading-relaxed text-sm">
+            <p className="text-zinc-500 leading-relaxed text-sm italic">
               "Menjembatani Inovasi Penjual ke Hati Konsumen melalui Teknologi dan Strategi."
             </p>
           </div>
